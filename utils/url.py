@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-
 
 API_URL_MAPPING = {
     'telegram-registrations': '/api/v1/registrations/telegram-registrations/',
@@ -12,5 +10,6 @@ API_URL_MAPPING = {
     'news-detail': '/api/v2/news/%s/detail/',
     'news-update': '/api/v2/news/%s/update/',
     'refresh': '/api/v1/news/refresh/',
-    'push': '/api/v1/news/push/'
+    'push': '/api/v1/news/push/',
+    'cache': '/api/v1/news/cache/'
 }

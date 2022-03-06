@@ -1,12 +1,10 @@
-import telegram
-# from telegram.ext.updater import Updater
-from telegram.ext import (Updater, Filters, CommandHandler, MessageHandler, ConversationHandler, RegexHandler)
 import logging
+
+import telegram
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+
 from conf import settings
 from utils import request
-# import pprint
-# import os
-
 
 logger = logging.getLogger(__name__)
 
@@ -47,13 +45,12 @@ def binduser(update: telegram.update.Update, content):
         update.message.reply_text("未輸入Token")
 
 
-
 def echo(update: telegram.update.Update, content):
     logger.info(update.message.from_user)
 
 
 def foo(update: telegram.update.Update, content):
-    update.message.forward('183009981')
+    update.message.forward(settings.TELEGRAM_OWNER_ID)
 
 
 def bot():
@@ -64,7 +61,7 @@ def bot():
     updater.dispatcher.add_handler(CommandHandler('help', start))
     updater.dispatcher.add_handler(CommandHandler('echo', echo))
     updater.dispatcher.add_handler(CommandHandler('binduser', binduser))
-    # updater.dispatcher.add_handler(MessageHandler(Filters.all, foo))
+    updater.dispatcher.add_handler(MessageHandler(Filters.all, foo))
     updater.start_polling()
     updater.idle()
 
