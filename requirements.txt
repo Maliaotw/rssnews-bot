@@ -5,6 +5,7 @@ chardet==3.0.4
 click==8.0.4
 cryptography==2.9.2
 decorator==4.4.2
+django-environ==0.4.5
 feedparser==5.2.1
 fire==0.3.1
 Flask==2.0.3
