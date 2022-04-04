@@ -1,0 +1,12 @@
+*.env
+.idea
+*.pyc
+*.DS_Store
+*.pid
+__pycache__
+.python-version
+cors-json-file.json
+credentials.json
+deploy.md
+acesskey.json
+acesskey.local.json
